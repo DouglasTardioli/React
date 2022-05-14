@@ -4,7 +4,7 @@ import { ButtonRepeat } from "./ButtonRepeat";
 export function Pagination() {
   return (
     <Stack
-      direction="row"
+      direction={["column", "row"]}
       mt="8"
       justify="space-between"
       align="center"
@@ -18,7 +18,7 @@ export function Pagination() {
       <ButtonRepeat number={2} />
       <ButtonRepeat number={3} />
       <ButtonRepeat number={4} />
-      <ButtonRepeat number={5} />
+    
         
       </Stack>
     </Stack>

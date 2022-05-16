@@ -1,5 +1,6 @@
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { Header } from "../components/Header/Header";
 import { Sidebar } from "../components/SideBar";
 
@@ -43,7 +44,8 @@ const options = {
       "2021-03-21T00:00:00.000Z",
       "2021-03-22T00:00:00.000Z",
       "2021-03-23T00:00:00.000Z",
-      "2021-03-24T00:00:00.000Z",
+     
+ 
     ],
   },
   fill: {
@@ -60,13 +62,20 @@ const options = {
 const series = [{ name: "series1", data: [31, 120, 10, 28, 61, 18, 109] }];
 
 export default function Dashboard() {
+  const [ assembleGraphics, setAssembleGraphics ] = useState(false)
+
+  useEffect(() => {
+    setAssembleGraphics(true)
+  }, [])
+
   return (
+   
     <Flex direction="column" h="100vh">
       <Header />
 
       <Flex w="100%" my="6" maxW={1480} mx="auto" px="6">
         <Sidebar />
-
+        { assembleGraphics && (
         <SimpleGrid
           flex="1"
           gap="4"
@@ -86,7 +95,9 @@ export default function Dashboard() {
             <Chart options={options} series={series} type="area" height={160} />
           </Box>
         </SimpleGrid>
+        )}
       </Flex>
     </Flex>
   );
+
 }

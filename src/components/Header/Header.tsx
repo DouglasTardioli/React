@@ -1,7 +1,7 @@
 import { Flex, Icon, IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { RiMenuLine } from "react-icons/ri";
 import { useSidebarDrawer } from "../contexts/SidebarDrawerContext";
-import { Logo } from "./logo";
+
 import { NotificationNav } from "./NotificationNav";
 import { Profile } from "./Profile";
 import { SearchBox } from "./SearchBox";
@@ -36,7 +36,7 @@ export function Header() {
         ></IconButton>
       )}
 
-      <Logo />
+
 
       {isWideVersion && <SearchBox />}
 

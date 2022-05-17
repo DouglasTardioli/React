@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { forwardRef, ForwardRefRenderFunction } from "react";
 import { FieldError } from "react-hook-form";
-import Logo from '../Header/logo';
+
 
 interface InputProps extends ChakraInputProps {
   name: string;

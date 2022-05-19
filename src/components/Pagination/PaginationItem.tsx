@@ -1,12 +1,13 @@
 import { Button } from "@chakra-ui/react"
-import { ReactNode } from "react"
+
 
 interface ButtonRepeatProps{
     number: number;
     isCurrent?: boolean,
+    onPageChange: (page: number) => void;
 }
 
-export function ButtonRepeat({ number, isCurrent = false }: ButtonRepeatProps){
+export function PaginationItem({ number, isCurrent = false, onPageChange}: ButtonRepeatProps){
     if(isCurrent) {
         return(
             <Button
@@ -33,6 +34,7 @@ export function ButtonRepeat({ number, isCurrent = false }: ButtonRepeatProps){
        _hover={{
         fb: 'gray.500'
        }}
+       onClick={() => onPageChange(number)}
       >
       {number}
       </Button>
